@@ -1,0 +1,133 @@
+.navbar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(239, 68, 68, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.8);
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  width: 95%;
+  top: 0.5rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  letter-spacing: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--color-accent-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-nav-contact {
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-fast);
+  color: var(--color-text-primary);
+}
+
+.btn-nav-contact:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    text-align: center;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(239, 68, 68, 0.2);
+    clip-path: circle(0% at 100% 0);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-links.active {
+    clip-path: circle(150% at 100% 0);
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .mobile-toggle {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    top: 0.5rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+}

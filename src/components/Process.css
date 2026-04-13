@@ -1,0 +1,111 @@
+.process-section {
+  background: var(--color-bg-elevated);
+}
+
+.process-container {
+  position: relative;
+  max-width: 800px;
+  margin: 4rem auto 0 auto;
+}
+
+.process-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--color-accent-primary), transparent);
+  transform: translateX(-50%);
+}
+
+.process-step {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.process-step.step-alt {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+.process-content {
+  width: 90%;
+  padding: 2rem;
+  position: relative;
+}
+
+.process-step.step-alt .process-content {
+  margin-left: auto;
+}
+
+.step-number {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #fff;
+  box-shadow: 0 0 15px var(--color-accent-glow);
+}
+
+.process-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.process-content p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.process-node {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--color-bg-base);
+  border: 4px solid var(--color-accent-primary);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+@media (max-width: 768px) {
+  .process-line {
+      left: 20px;
+  }
+  
+  .process-step, .process-step.step-alt {
+      padding-left: 50px;
+      padding-right: 0;
+      justify-content: flex-start;
+  }
+  
+  .process-content {
+      width: 100%;
+  }
+
+  .process-node {
+      left: 20px;
+  }
+}

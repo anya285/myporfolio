@@ -1,0 +1,77 @@
+.contact-section {
+  position: relative;
+}
+
+.cta-container {
+  padding: 5rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.cta-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.cta-subtext {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.cta-btn.whatsapp {
+  background-color: #25D366;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.cta-btn.whatsapp:hover {
+  background-color: #128C7E;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.cta-btn.insta {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+}
+
+.cta-btn.insta:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+}
+
+.cta-btn.email {
+  background-color: transparent;
+  border: 2px solid var(--color-accent-primary);
+  color: #fff;
+  box-shadow: none;
+}
+
+.cta-btn.email:hover {
+  background-color: rgba(139, 92, 246, 0.1);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+@media (max-width: 768px) {
+  .cta-container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
