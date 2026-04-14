@@ -1,29 +1,49 @@
 import React from 'react';
-import { Mail, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Send, ArrowUpRight } from 'lucide-react';
 import './ContactCTA.css';
 
 const ContactCTA = () => {
   return (
     <section id="contact" className="section-padding contact-section">
       <div className="container">
-        <div className="cta-container glass-card text-center">
-          <h2 className="cta-heading">
-            Let’s grow your brand with <span className="accent-text">powerful content</span>
-          </h2>
-          <p className="cta-subtext">
-            Ready to take your social media presence to the next level? Reach out today and let's discuss your project.
-          </p>
-          
-          <div className="cta-buttons">
-            <a href="https://wa.me/#" target="_blank" rel="noopener noreferrer" className="btn btn-primary cta-btn whatsapp">
-               <MessageCircle size={20} /> WhatsApp
-            </a>
-            <a href="mailto:hello@example.com" className="btn btn-primary cta-btn email">
-               <Mail size={20} /> Email Me
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary cta-btn insta">
-               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> Instagram
-            </a>
+        <div className="contact-layout">
+          {/* Left Column: Info */}
+          <div className="contact-info-col">
+            <h2 className="contact-heading">Start Your Next<br />Project</h2>
+            <p className="contact-desc">
+              Looking to elevate your content and stand out online? Let’s create something impactful together.
+            </p>
+            
+            <div className="contact-links">
+              <a href="mailto:emmanuelanya285@gmail.com" className="contact-link-item">
+                <span className="contact-label">emmanuelanya285@gmail.com</span>
+                <ArrowUpRight size={20} className="accent-text" />
+              </a>
+              <a href="tel:+2349072389416" className="contact-link-item">
+                <span className="contact-label">+234 907 238 9416</span>
+                <ArrowUpRight size={20} className="accent-text" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="contact-form-col">
+            <div className="form-card glass-card">
+              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <div className="form-group">
+                  <input type="text" placeholder="Your Name" className="form-input" />
+                </div>
+                <div className="form-group">
+                  <input type="email" placeholder="Your Email" className="form-input" />
+                </div>
+                <div className="form-group">
+                  <textarea placeholder="Tell me about your project" className="form-input form-textarea" rows="4"></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary btn-submit">
+                  Send Message <Send size={18} />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
