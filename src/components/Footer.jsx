@@ -18,12 +18,12 @@ const Footer = () => {
               I help brands grow through scroll-stopping video content and strategic social media management—creating visuals that engage, convert, and leave a lasting impact.
             </p>
             <div className="footer-socials">
-              <a href="#" className="social-icon"><FaLinkedinIn /></a>
-              <a href="#" className="social-icon"><FaBehance /></a>
-              <a href="#" className="social-icon"><FaTwitter /></a>
-              <a href="#" className="social-icon"><FaDribbble /></a>
-              <a href="#" className="social-icon"><FaInstagram /></a>
-              <a href="#" className="social-icon"><FaTiktok /></a>
+              <a href="#" className="social-icon" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              <a href="#" className="social-icon" aria-label="Behance"><FaBehance /></a>
+              <a href="#" className="social-icon" aria-label="Twitter"><FaTwitter /></a>
+              <a href="#" className="social-icon" aria-label="Dribbble"><FaDribbble /></a>
+              <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
+              <a href="#" className="social-icon" aria-label="TikTok"><FaTiktok /></a>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ const Footer = () => {
             <p>© 2026 Emmanuel Anya. All rights reserved.</p>
             <div className="footer-bottom-right">
               <p className="footer-tagline">Crafted with creativity and a focus on performance.</p>
-              <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="back-to-top">
+              <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="back-to-top" aria-label="Back to Top">
                 ↑
               </button>
             </div>
