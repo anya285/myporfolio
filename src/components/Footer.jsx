@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaTiktok, FaYoutube, FaInstagram, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { FaTiktok, FaInstagram, FaLinkedinIn, FaBehance, FaTwitter, FaDribbble } from 'react-icons/fa';
+import { Link as LinkIcon } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,16 +10,20 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Logo & Bio Column */}
           <div className="footer-col footer-branding">
-            <h2 className="footer-logo">Emmanuel <span className="accent-text">Anya</span></h2>
+            <div className="footer-logo-wrapper">
+              <LinkIcon className="accent-text" size={24} />
+              <h2 className="footer-logo">Emmanuel <span className="accent-text">Anya</span></h2>
+            </div>
             <p className="footer-bio">
               I help brands grow through scroll-stopping video content and strategic social media management—creating visuals that engage, convert, and leave a lasting impact.
             </p>
             <div className="footer-socials">
-              <a href="#" className="social-icon"><FaTiktok /></a>
-              <a href="#" className="social-icon"><FaYoutube /></a>
-              <a href="#" className="social-icon"><FaInstagram /></a>
-              <a href="#" className="social-icon"><FaFacebookF /></a>
               <a href="#" className="social-icon"><FaLinkedinIn /></a>
+              <a href="#" className="social-icon"><FaBehance /></a>
+              <a href="#" className="social-icon"><FaTwitter /></a>
+              <a href="#" className="social-icon"><FaDribbble /></a>
+              <a href="#" className="social-icon"><FaInstagram /></a>
+              <a href="#" className="social-icon"><FaTiktok /></a>
             </div>
           </div>
 
@@ -54,8 +59,16 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <p>© 2026 Emmanuel Anya. All rights reserved.</p>
-          <p className="footer-tagline">Crafted with creativity and a focus on performance.</p>
+          <div className="footer-divider"></div>
+          <div className="footer-bottom-content">
+            <p>© 2026 Emmanuel Anya. All rights reserved.</p>
+            <div className="footer-bottom-right">
+              <p className="footer-tagline">Crafted with creativity and a focus on performance.</p>
+              <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="back-to-top">
+                ↑
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
