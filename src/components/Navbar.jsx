@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,14 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -23,17 +32,18 @@ const Navbar = () => {
         
         <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
           <li><a href="#" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
+          <li><a href="#work" onClick={() => setMobileMenuOpen(false)}>Work</a></li>
           <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a></li>
-          <li><a href="#work" onClick={() => setMobileMenuOpen(false)}>Portfolio</a></li>
-          <li><a href="#services" onClick={() => setMobileMenuOpen(false)}>Service</a></li>
-          <li><a href="#testimonials" onClick={() => setMobileMenuOpen(false)}>Testimonials</a></li>
-          <li><a href="#blog" onClick={() => setMobileMenuOpen(false)}>Blog</a></li>
+          <li><a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
         </ul>
 
         <div className="nav-actions">
-          <a href="#contact" className="btn btn-nav-contact">Contact</a>
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === 'dark' ? <Sun size={20} color="currentColor" /> : <Moon size={20} color="currentColor" />}
+          </button>
+          <a href="#contact" className="btn btn-primary">Book a Call</a>
           <button className="mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X size={24} color="#fafafa" /> : <Menu size={24} color="#fafafa" />}
+            {mobileMenuOpen ? <X size={24} color="currentColor" /> : <Menu size={24} color="currentColor" />}
           </button>
         </div>
       </div>

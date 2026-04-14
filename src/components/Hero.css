@@ -117,12 +117,12 @@
 
 .hero-btn {
   padding: 0.8rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 50px;
 }
 
 .hero-btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
+  border-radius: 50px;
   padding: 0.8rem 1.5rem;
   background: transparent;
   color: var(--color-text-primary);

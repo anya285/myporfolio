@@ -1,0 +1,137 @@
+.selected-projects-section {
+  position: relative;
+  background: var(--color-bg-base);
+}
+
+.selected-projects-layout {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.sp-left {
+  flex: 0 0 280px;
+}
+
+.sp-sticky-content {
+  position: sticky;
+  top: 150px;
+}
+
+.sp-heading {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.sp-btn {
+  border-radius: 50px;
+  padding: 0.75rem 1.75rem;
+  background: var(--color-accent-primary);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.sp-right {
+  flex: 1;
+}
+
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.sp-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--color-glass-bg);
+  box-shadow: none;
+}
+
+.sp-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.sp-image-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--color-bg-elevated);
+}
+
+.sp-card.full-width .sp-image-wrapper {
+  aspect-ratio: 16/9;
+}
+
+.sp-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sp-card:hover .sp-image {
+  transform: scale(1.05);
+}
+
+.sp-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sp-title {
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.sp-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sp-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  background: rgba(239, 68, 68, 0.05);
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .selected-projects-layout {
+    flex-direction: column;
+  }
+  .sp-left {
+    flex: none;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .sp-sticky-content {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-grid {
+    grid-template-columns: 1fr;
+  }
+  .sp-card.full-width {
+    grid-column: auto;
+  }
+}

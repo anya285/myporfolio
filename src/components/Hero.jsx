@@ -42,7 +42,7 @@ const Hero = () => {
                 Download CV <ArrowRight size={20} />
               </a>
               <a href="#work" className="btn btn-secondary hero-btn-outline">
-                <Play size={20} /> View My Work
+                <Play size={20} /> Works
               </a>
             </div>
           </div>

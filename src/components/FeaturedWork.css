@@ -1,95 +1,70 @@
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.project-card {
+.featured-section {
   overflow: hidden;
-  padding: 0.5rem;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
 }
 
-.video-container {
+.slider-container {
+  width: 100vw;
   position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  border-radius: 0.75rem;
   overflow: hidden;
-  background: #000;
+  margin-top: 3rem;
+  padding: 4rem 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--color-marquee-bg);
 }
 
-.project-card:nth-child(even) .video-container {
+.slider-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  align-items: center;
+  animation: scroll-left 40s linear infinite;
+}
+
+
+.project-slide {
+  flex-shrink: 0;
+}
+
+.video-frame {
+  height: 580px;
+  width: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 2.5rem;
+  border: 4px solid rgba(239, 68, 68, 0.4);
+  padding: 0.75rem;
+  background: var(--color-bg-elevated);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  overflow: hidden;
+  position: relative;
+}
+
+.video-frame.landscape {
+  height: 580px;
   aspect-ratio: 16 / 9;
 }
 
-@media (max-width: 768px) {
-  .project-card:nth-child(even) .video-container {
-      aspect-ratio: 9 / 16;
-  }
-}
-
-.poster, .preview-video {
+.showcase-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: opacity 0.4s ease;
+  border-radius: 1.8rem;
+  pointer-events: none;
 }
 
-.preview-video {
-  opacity: 0;
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-33.333% - 1rem));
+  }
 }
 
-.preview-video.visible {
-  opacity: 1;
-}
-
-.poster.hidden {
-  opacity: 0;
-}
-
-.play-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
-}
-
-.project-card:hover .play-overlay {
-  transform: translate(-50%, -50%) scale(1.2);
-  background: var(--color-accent-primary);
-}
-
-.project-info {
-  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-.project-category {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-accent-hover);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.project-title {
-  font-size: 1.25rem;
-  color: var(--color-text-primary);
+@media (max-width: 768px) {
+  .video-frame {
+    height: 400px;
+  }
 }
