@@ -9,7 +9,7 @@
   --color-accent-glow: rgba(239, 68, 68, 0.4);
 
   --color-glass-bg: rgba(26, 26, 26, 0.6);
-  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-border: rgba(255, 255, 255, 0.05);
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -29,7 +29,7 @@
   --color-marquee-bg: #fcf1f1;
 
   --color-glass-bg: rgba(255, 255, 255, 0.8);
-  --color-glass-border: rgba(0, 0, 0, 0.1);
+  --color-glass-border: rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -154,5 +154,5 @@ button {
 .glass-card:hover {
   border-color: var(--color-accent-primary);
   transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }

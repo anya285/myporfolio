@@ -15,7 +15,8 @@
 
 .sp-sticky-content {
   position: sticky;
-  top: 150px;
+  top: 50vh;
+  transform: translateY(-50%);
 }
 
 .sp-heading {
