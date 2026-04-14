@@ -7,6 +7,7 @@ import Services from './components/Services';
 import ValueResults from './components/ValueResults';
 import About from './components/About';
 import ContactCTA from './components/ContactCTA';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <ValueResults />
         <About />
         <ContactCTA />
+        <Footer />
       </main>
     </div>
   );
