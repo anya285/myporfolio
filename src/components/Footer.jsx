@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTiktok, FaInstagram, FaLinkedinIn, FaBehance, FaTwitter, FaDribbble } from 'react-icons/fa';
+import { FaTiktok, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -17,12 +17,10 @@ const Footer = () => {
               I help brands grow through scroll-stopping video content and strategic social media management—creating visuals that engage, convert, and leave a lasting impact.
             </p>
             <div className="footer-socials">
-              <a href="#" className="social-icon" aria-label="LinkedIn"><FaLinkedinIn /></a>
-              <a href="#" className="social-icon" aria-label="Behance"><FaBehance /></a>
-              <a href="#" className="social-icon" aria-label="Twitter"><FaTwitter /></a>
-              <a href="#" className="social-icon" aria-label="Dribbble"><FaDribbble /></a>
-              <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" className="social-icon" aria-label="TikTok"><FaTiktok /></a>
+              <a href="https://www.linkedin.com/in/emmanuel-miracle-5b6652255" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              <a href="https://x.com/emmanuelanya285" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X (Twitter)"><FaXTwitter /></a>
+              <a href="https://www.instagram.com/m_edits285?igsh=bDBmbjRxeWg0bXVy" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://www.tiktok.com/@depydev?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="TikTok"><FaTiktok /></a>
             </div>
           </div>
 
