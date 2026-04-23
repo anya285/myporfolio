@@ -30,9 +30,7 @@ const WorksPage = () => {
                 <div className="works-video-wrapper">
                   <LazyVideo 
                     src={project.videoUrl} 
-                    autoPlay 
-                    loop 
-                    muted 
+                    controls
                     playsInline 
                     className="works-video"
                   />
