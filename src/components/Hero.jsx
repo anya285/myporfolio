@@ -38,7 +38,7 @@ const Hero = () => {
               {typedText}<span className="cursor-blink">|</span>
             </p>
             <div className="hero-ctas">
-              <a href="#cv" className="btn btn-primary hero-btn">
+              <a href="/EMMANUEL ANYA main resume.pdf" download className="btn btn-primary hero-btn">
                 Download CV <ArrowRight size={20} />
               </a>
               <a href="#work" className="btn btn-secondary hero-btn-outline">

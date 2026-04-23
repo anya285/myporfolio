@@ -65,6 +65,14 @@
 
 @media (max-width: 768px) {
   .video-frame {
-    height: 400px;
+    height: auto;
+    width: 60vw;
+  }
+  .video-frame.landscape {
+    width: 85vw;
+    height: auto;
+  }
+  .slider-track {
+    gap: 1.5rem;
   }
 }

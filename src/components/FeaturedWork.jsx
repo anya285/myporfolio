@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyVideo from './LazyVideo';
 import './FeaturedWork.css';
 
 const projects = [
@@ -25,7 +26,7 @@ const FeaturedWork = () => {
           {[...projects, ...projects, ...projects].map((project, idx) => (
             <div key={idx} className="project-slide">
               <div className={`video-frame ${project.type}`}>
-                <video 
+                <LazyVideo 
                   src={project.videoUrl} 
                   autoPlay 
                   muted 

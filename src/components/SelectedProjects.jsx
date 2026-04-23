@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import LazyVideo from './LazyVideo';
 import './SelectedProjects.css';
 
 const portfolioItems = [
@@ -52,7 +53,7 @@ const SelectedProjects = () => {
               {portfolioItems.map(item => (
                 <div key={item.id} className={`sp-card glass-card ${item.fullWidth ? 'full-width' : ''}`}>
                   <div className="sp-image-wrapper">
-                    <video src={item.videoUrl} className="sp-image" autoPlay loop muted playsInline />
+                    <LazyVideo src={item.videoUrl} className="sp-image" autoPlay loop muted playsInline />
                   </div>
                   <div className="sp-info">
                     <h3 className="sp-title">{item.title}</h3>
