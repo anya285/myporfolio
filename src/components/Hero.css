@@ -294,6 +294,9 @@
 }
 
 @media (max-width: 992px) {
+  .hero {
+    padding-top: 9rem;
+  }
   .hero-content {
     flex-direction: column;
     text-align: center;

@@ -35,13 +35,16 @@ const Navbar = () => {
           <li><a href="#work" onClick={() => setMobileMenuOpen(false)}>Work</a></li>
           <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a></li>
           <li><a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
+          <li className="mobile-only-cta">
+            <a href="#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Book a Call</a>
+          </li>
         </ul>
 
         <div className="nav-actions">
           <button className="theme-toggle" onClick={toggleTheme}>
             {theme === 'dark' ? <Sun size={20} color="currentColor" /> : <Moon size={20} color="currentColor" />}
           </button>
-          <a href="#contact" className="btn btn-primary">Book a Call</a>
+          <a href="#contact" className="btn btn-primary desktop-cta">Book a Call</a>
           <button className="mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} color="currentColor" /> : <Menu size={24} color="currentColor" />}
           </button>
