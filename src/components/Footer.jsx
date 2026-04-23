@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaTiktok, FaInstagram, FaLinkedinIn, FaBehance, FaTwitter, FaDribbble } from 'react-icons/fa';
-import { Link as LinkIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,7 +11,6 @@ const Footer = () => {
           {/* Logo & Bio Column */}
           <div className="footer-col footer-branding">
             <div className="footer-logo-wrapper">
-              <LinkIcon className="accent-text" size={24} />
               <h2 className="footer-logo">Emmanuel <span className="accent-text">Anya</span></h2>
             </div>
             <p className="footer-bio">
@@ -29,18 +28,18 @@ const Footer = () => {
 
           {/* Quick Links Column */}
           <div className="footer-col footer-links">
-            <h3 className="footer-col-title">⚡ Quick <span className="accent-text">Links</span></h3>
+            <h3 className="footer-col-title">Quick <span className="accent-text">Links</span></h3>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#work">Work</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/works">Work</Link></li>
+              <li><a href="/#services">Services</a></li>
+              <li><a href="/#contact">Contact</a></li>
             </ul>
           </div>
 
           {/* Newsletter Column */}
           <div className="footer-col footer-newsletter">
-            <h3 className="footer-col-title">📩 Stay <span className="accent-text">Connected</span></h3>
+            <h3 className="footer-col-title">Stay <span className="accent-text">Connected</span></h3>
             <p className="newsletter-text">
               Get insights on video editing, content strategy, and social media growth.
             </p>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTiktok, FaYoutube, FaInstagram } from 'react-icons/fa';
 import './Hero.css';
 
@@ -41,9 +42,9 @@ const Hero = () => {
               <a href="/EMMANUEL ANYA main resume.pdf" download className="btn btn-primary hero-btn">
                 Download CV <ArrowRight size={20} />
               </a>
-              <a href="#work" className="btn btn-secondary hero-btn-outline">
+              <Link to="/works" className="btn btn-secondary hero-btn-outline">
                 <Play size={20} /> Works
-              </a>
+              </Link>
             </div>
           </div>
           
