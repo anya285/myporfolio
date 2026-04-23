@@ -4,12 +4,12 @@ import ContactCTA from '../components/ContactCTA';
 import './WorksPage.css';
 
 const allProjects = [
-  { id: 1, title: 'Talking Head Series', videoUrl: '/talkinghead.mp4', category: 'Content Strategy' },
-  { id: 2, title: 'Commercial Advertisement', videoUrl: '/commercialad.mp4', category: 'Ads' },
-  { id: 3, title: 'YouTube Highlight', videoUrl: '/youtubclip.mp4', category: 'Retention' },
-  { id: 4, title: 'Church Event Edit', videoUrl: '/ChurchEdit.mp4', category: 'Event' },
-  { id: 5, title: 'Motion Design Reel', videoUrl: '/motiondesin1.mp4', category: 'Motion' },
-  { id: 6, title: 'Movie Clip Tribute', videoUrl: '/movieclip.mp4', category: 'Creative' },
+  { id: 1, title: 'Talking Head Series', videoUrl: '/talkinghead.mp4', category: 'Content Strategy', type: 'landscape' },
+  { id: 2, title: 'Commercial Advertisement', videoUrl: '/commercialad.mp4', category: 'Ads', type: 'portrait' },
+  { id: 3, title: 'YouTube Highlight', videoUrl: '/youtubclip.mp4', category: 'Retention', type: 'portrait' },
+  { id: 4, title: 'Church Event Edit', videoUrl: '/ChurchEdit.mp4', category: 'Event', type: 'portrait' },
+  { id: 5, title: 'Motion Design Reel', videoUrl: '/motiondesin1.mp4', category: 'Motion', type: 'portrait' },
+  { id: 6, title: 'Movie Clip Tribute', videoUrl: '/movieclip.mp4', category: 'Creative', type: 'landscape' },
 ];
 
 const WorksPage = () => {
@@ -26,13 +26,14 @@ const WorksPage = () => {
         <div className="container">
           <div className="works-grid">
             {allProjects.map(project => (
-              <div key={project.id} className="works-card glass-card">
+              <div key={project.id} className={`works-card glass-card ${project.type}`}>
                 <div className="works-video-wrapper">
                   <LazyVideo 
                     src={project.videoUrl} 
                     controls
                     playsInline 
                     className="works-video"
+                    preload="metadata"
                   />
                 </div>
                 <div className="works-info">

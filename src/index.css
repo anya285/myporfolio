@@ -122,13 +122,13 @@ button {
 .btn-primary {
   background-color: var(--color-accent-primary);
   color: #fff;
-  box-shadow: 0 4px 14px var(--color-accent-glow);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--color-accent-glow);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
@@ -154,5 +154,5 @@ button {
 .glass-card:hover {
   border-color: var(--color-accent-primary);
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }

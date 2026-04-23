@@ -164,7 +164,7 @@
   border: 4px solid rgba(239, 68, 68, 0.15); /* Faint track */
   border-top-color: var(--color-accent-primary); /* Bright segment */
   border-right-color: var(--color-accent-primary);
-  box-shadow: 0 0 30px var(--color-accent-glow), inset 0 0 20px var(--color-accent-glow);
+  box-shadow: 0 0 15px var(--color-accent-glow);
   animation: spin 3s linear infinite;
   z-index: 0;
 }
@@ -234,7 +234,7 @@
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.1rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 2;
   transition: all var(--transition-fast);
