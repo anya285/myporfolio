@@ -10,6 +10,7 @@ const allProjects = [
   { id: 4, title: 'Church Event Edit', videoUrl: '/ChurchEdit.mp4', category: 'Event', type: 'portrait' },
   { id: 5, title: 'Motion Design Reel', videoUrl: '/motiondesin1.mp4', category: 'Motion', type: 'portrait' },
   { id: 6, title: 'Movie Clip Tribute', videoUrl: '/movieclip.mp4', category: 'Creative', type: 'landscape' },
+  { id: 7, title: 'Swychr Motion Intro', videoUrl: '/swychr motion design intro.mp4', category: 'Motion', type: 'portrait' },
 ];
 
 const WorksPage = () => {
@@ -30,10 +31,12 @@ const WorksPage = () => {
                 <div className="works-video-wrapper">
                   <LazyVideo 
                     src={project.videoUrl} 
-                    controls
+                    autoPlay
+                    muted
+                    loop
                     playsInline 
                     className="works-video"
-                    preload="metadata"
+                    preload="none"
                   />
                 </div>
                 <div className="works-info">

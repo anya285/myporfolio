@@ -53,7 +53,7 @@ const SelectedProjects = () => {
               {portfolioItems.map(item => (
                 <div key={item.id} className={`sp-card glass-card ${item.fullWidth ? 'full-width' : ''}`}>
                   <div className="sp-image-wrapper">
-                    <LazyVideo src={item.videoUrl} className="sp-image" autoPlay loop muted playsInline />
+                    <LazyVideo src={item.videoUrl} className="sp-image" autoPlay loop muted playsInline preload="none" />
                   </div>
                   <div className="sp-info">
                     <h3 className="sp-title">{item.title}</h3>

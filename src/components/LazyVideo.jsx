@@ -13,7 +13,10 @@ const LazyVideo = ({ src, ...rest }) => {
           setHasLoaded(true);
         }
       },
-      { rootMargin: '200px' } // Load slightly before it comes into view
+      { 
+        rootMargin: '0px', 
+        threshold: 0.25 // Trigger when 25% of the video is visible
+      }
     );
 
     if (videoRef.current) observer.observe(videoRef.current);
@@ -27,7 +30,7 @@ const LazyVideo = ({ src, ...rest }) => {
   useEffect(() => {
     if (hasLoaded && videoRef.current) {
         if (isIntersecting && rest.autoPlay) {
-            videoRef.current.play().catch(() => {}); // Catch play() errors (e.g., user hasn't interacted)
+            videoRef.current.play().catch(() => {}); 
         } else {
             videoRef.current.pause();
         }
@@ -35,12 +38,18 @@ const LazyVideo = ({ src, ...rest }) => {
   }, [isIntersecting, hasLoaded, rest.autoPlay]);
 
   return (
-    <video
-      ref={videoRef}
-      src={hasLoaded ? src : undefined}
-      preload="none"
-      {...rest}
-    />
+    <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 'inherit' }}>
+      {!hasLoaded && <div className="video-placeholder" />}
+      <video
+        ref={videoRef}
+        src={hasLoaded ? src : undefined}
+        preload="none"
+        onLoadedData={() => {
+            // Optional: Hide placeholder once data is loaded if we wanted to be more precise
+        }}
+        {...rest}
+      />
+    </div>
   );
 };
 

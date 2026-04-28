@@ -6,7 +6,8 @@ const projects = [
   { id: 1, videoUrl: '/ChurchEdit.mp4', type: 'portrait' },
   { id: 2, videoUrl: '/commercialad.mp4', type: 'portrait' },
   { id: 3, videoUrl: '/youtubclip.mp4', type: 'portrait' },
-  { id: 4, videoUrl: '/talkinghead.mp4', type: 'landscape' },
+  { id: 4, videoUrl: '/swychr motion design intro.mp4', type: 'portrait' },
+  { id: 5, videoUrl: '/talkinghead.mp4', type: 'landscape' },
 ];
 
 const FeaturedWork = () => {
