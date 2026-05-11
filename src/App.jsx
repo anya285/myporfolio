@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import WorksPage from './pages/WorksPage';
 
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
     <Router>
@@ -17,6 +19,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <Analytics />
       </div>
     </Router>
   );
