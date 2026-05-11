@@ -22,10 +22,8 @@
 }
 
 .works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  align-items: start;
+  column-count: 3;
+  column-gap: 2.5rem;
   width: 100%;
 }
 
@@ -37,6 +35,8 @@
   flex-direction: column;
   width: 100%;
   cursor: pointer;
+  break-inside: avoid;
+  margin-bottom: 2.5rem;
 }
 
 .works-card:hover {
@@ -81,9 +81,15 @@
   color: var(--color-text-primary);
 }
 
+@media (max-width: 1024px) {
+  .works-grid {
+    column-count: 2;
+  }
+}
+
 @media (max-width: 768px) {
   .works-grid {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 }
 

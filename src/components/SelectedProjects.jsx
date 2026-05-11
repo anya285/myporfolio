@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, X } from 'lucide-react';
 import LazyVideo from './LazyVideo';
 import './SelectedProjects.css';
 
@@ -35,6 +35,8 @@ const portfolioItems = [
 ];
 
 const SelectedProjects = () => {
+  const [activeVideo, setActiveVideo] = useState(null);
+
   return (
     <section className="selected-projects-section section-padding" id="portfolio">
       <div className="container">
@@ -51,7 +53,7 @@ const SelectedProjects = () => {
           <div className="sp-right">
             <div className="sp-grid">
               {portfolioItems.map(item => (
-                <div key={item.id} className={`sp-card glass-card ${item.fullWidth ? 'full-width' : ''}`}>
+                <div key={item.id} className={`sp-card glass-card ${item.fullWidth ? 'full-width' : ''}`} onClick={() => setActiveVideo(item)} style={{cursor: 'pointer'}}>
                   <div className="sp-image-wrapper">
                     <LazyVideo src={item.videoUrl} className="sp-image" autoPlay loop muted playsInline />
                   </div>
@@ -69,6 +71,23 @@ const SelectedProjects = () => {
           </div>
         </div>
       </div>
+
+      {activeVideo && (
+        <div className="video-modal-overlay" onClick={() => setActiveVideo(null)}>
+          <div className="video-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="video-modal-close" onClick={() => setActiveVideo(null)}>
+              <X size={24} /> Close
+            </button>
+            <video 
+              src={activeVideo.videoUrl} 
+              className="video-modal-video"
+              controls 
+              autoPlay 
+              playsInline
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

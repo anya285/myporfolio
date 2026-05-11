@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { X } from 'lucide-react';
 import LazyVideo from './LazyVideo';
 import './FeaturedWork.css';
 
@@ -11,6 +12,8 @@ const projects = [
 ];
 
 const FeaturedWork = () => {
+  const [activeVideo, setActiveVideo] = useState(null);
+
   return (
     <section id="work" className="section-padding featured-section">
       <div className="container">
@@ -25,8 +28,8 @@ const FeaturedWork = () => {
       <div className="slider-container">
         <div className="slider-track">
           {[...projects, ...projects, ...projects].map((project, idx) => (
-            <div key={idx} className="project-slide">
-              <div className={`video-frame ${project.type}`}>
+            <div key={idx} className="project-slide" onClick={() => setActiveVideo(project)} style={{cursor: 'pointer'}}>
+              <div className="video-frame">
                 <LazyVideo 
                   src={project.videoUrl} 
                   autoPlay 
@@ -40,6 +43,23 @@ const FeaturedWork = () => {
           ))}
         </div>
       </div>
+
+      {activeVideo && (
+        <div className="video-modal-overlay" onClick={() => setActiveVideo(null)}>
+          <div className="video-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="video-modal-close" onClick={() => setActiveVideo(null)}>
+              <X size={24} /> Close
+            </button>
+            <video 
+              src={activeVideo.videoUrl} 
+              className="video-modal-video"
+              controls 
+              autoPlay 
+              playsInline
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
