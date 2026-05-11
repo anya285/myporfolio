@@ -36,7 +36,6 @@ const WorksPage = () => {
                     loop
                     playsInline 
                     className="works-video"
-                    preload="none"
                   />
                 </div>
                 <div className="works-info">

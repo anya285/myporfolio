@@ -14,8 +14,8 @@ const LazyVideo = ({ src, ...rest }) => {
         }
       },
       { 
-        rootMargin: '0px', 
-        threshold: 0.25 // Trigger when 25% of the video is visible
+        rootMargin: '800px', 
+        threshold: 0
       }
     );
 
@@ -43,7 +43,7 @@ const LazyVideo = ({ src, ...rest }) => {
       <video
         ref={videoRef}
         src={hasLoaded ? src : undefined}
-        preload="none"
+        preload="auto"
         onLoadedData={() => {
             // Optional: Hide placeholder once data is loaded if we wanted to be more precise
         }}
