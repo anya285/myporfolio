@@ -53,7 +53,7 @@ const SelectedProjects = () => {
           <div className="sp-right">
             <div className="sp-grid">
               {portfolioItems.map(item => (
-                <div key={item.id} className={`sp-card glass-card ${item.fullWidth ? 'full-width' : ''}`} onClick={() => setActiveVideo(item)} style={{cursor: 'pointer'}}>
+                <div key={item.id} className={`sp-card glass-card ${item.fullWidth ? 'full-width' : ''}`} onClick={() => setActiveVideo(item)} style={{ cursor: 'pointer' }}>
                   <div className="sp-image-wrapper">
                     <LazyVideo src={item.videoUrl} className="sp-image" autoPlay loop muted playsInline />
                   </div>

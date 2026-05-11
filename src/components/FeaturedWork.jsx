@@ -28,8 +28,8 @@ const FeaturedWork = () => {
       <div className="slider-container">
         <div className="slider-track">
           {[...projects, ...projects, ...projects].map((project, idx) => (
-            <div key={idx} className="project-slide" onClick={() => setActiveVideo(project)} style={{cursor: 'pointer'}}>
-              <div className="video-frame">
+            <div key={idx} className="project-slide" onClick={() => setActiveVideo(project)} style={{ cursor: 'pointer' }}>
+              <div className={`video-frame ${project.type}`}>
                 <LazyVideo 
                   src={project.videoUrl} 
                   autoPlay 

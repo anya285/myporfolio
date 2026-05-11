@@ -30,6 +30,8 @@
 
 .video-frame {
   height: 580px;
+  width: auto;
+  aspect-ratio: 9 / 16;
   border-radius: 2.5rem;
   border: 4px solid rgba(239, 68, 68, 0.4);
   padding: 0.75rem;
@@ -37,13 +39,17 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   overflow: hidden;
   position: relative;
-  display: flex;
-  justify-content: center;
+}
+
+.video-frame.landscape {
+  height: 580px;
+  aspect-ratio: 16 / 9;
 }
 
 .showcase-video {
-  width: auto;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
   border-radius: 1.8rem;
   pointer-events: none;
 }
@@ -59,7 +65,12 @@
 
 @media (max-width: 768px) {
   .video-frame {
-    height: 400px;
+    height: auto;
+    width: 60vw;
+  }
+  .video-frame.landscape {
+    width: 85vw;
+    height: auto;
   }
   .slider-track {
     gap: 1.5rem;
