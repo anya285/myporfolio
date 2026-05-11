@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { X } from 'lucide-react';
 import LazyVideo from '../components/LazyVideo';
 import ContactCTA from '../components/ContactCTA';
 import './WorksPage.css';
@@ -14,6 +15,8 @@ const allProjects = [
 ];
 
 const WorksPage = () => {
+  const [activeVideo, setActiveVideo] = useState(null);
+
   return (
     <div className="works-page">
       <section className="works-hero section-padding">
@@ -26,8 +29,8 @@ const WorksPage = () => {
       <section className="works-grid-section section-padding">
         <div className="container">
           <div className="works-grid">
-            {allProjects.map(project => (
-              <div key={project.id} className={`works-card glass-card ${project.type}`}>
+            {allProjects.map((project, index) => (
+              <div key={project.id} className={`works-card glass-card ${project.type}`} onClick={() => setActiveVideo(project)}>
                 <div className="works-video-wrapper">
                   <LazyVideo 
                     src={project.videoUrl} 
@@ -36,6 +39,7 @@ const WorksPage = () => {
                     loop
                     playsInline 
                     className="works-video"
+                    eager={index < 2}
                   />
                 </div>
                 <div className="works-info">
@@ -48,6 +52,23 @@ const WorksPage = () => {
         </div>
       </section>
       
+      {activeVideo && (
+        <div className="video-modal-overlay" onClick={() => setActiveVideo(null)}>
+          <div className="video-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="video-modal-close" onClick={() => setActiveVideo(null)}>
+              <X size={24} /> Close
+            </button>
+            <video 
+              src={activeVideo.videoUrl} 
+              className="video-modal-video"
+              controls 
+              autoPlay 
+              playsInline
+            />
+          </div>
+        </div>
+      )}
+
       <ContactCTA />
     </div>
   );

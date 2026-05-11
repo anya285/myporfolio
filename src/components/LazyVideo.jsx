@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-const LazyVideo = ({ src, ...rest }) => {
+const LazyVideo = ({ src, eager = false, ...rest }) => {
   const videoRef = useRef(null);
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(eager);
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
