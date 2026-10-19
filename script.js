@@ -60,38 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '0px 0px -40px 0px'
   });
 
-  // --- Smart Video Lazy Loading & Viewport Play/Pause Management ---
-  const lazyVideos = document.querySelectorAll('video.lazy-video');
-  if ('IntersectionObserver' in window && lazyVideos.length > 0) {
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const vid = entry.target;
-        if (entry.isIntersecting) {
-          // Load source when entering viewport
-          if (!vid.src && vid.dataset.src) {
-            vid.src = vid.dataset.src;
-            vid.load();
-          }
-          vid.play().catch(() => {});
-        } else {
-          // Pause when outside viewport to free CPU/GPU and network
-          if (vid.src) {
-            vid.pause();
-          }
-        }
-      });
-    }, {
-      rootMargin: '200px 0px 200px 0px',
-      threshold: 0.1
-    });
-
-    lazyVideos.forEach(v => videoObserver.observe(v));
-  } else {
-    // Fallback for older browsers
-    lazyVideos.forEach(v => {
-      if (v.dataset.src) v.src = v.dataset.src;
-    });
-  }
+  revealElements.forEach(el => revealObserver.observe(el));
 
   // --- Modal Preview for Projects ---
   const modal = document.querySelector('.preview-modal');
