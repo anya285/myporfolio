@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southeast Project - M_edits</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        .project-page {
+            padding: 10rem 0 5rem;
+            background-color: var(--clr-offwhite);
+            min-height: 100vh;
+        }
+        
+        .project-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--clr-blue);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        
+        .storyboard-grid {
+            column-count: 2;
+            column-gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .storyboard-grid {
+                column-count: 1;
+            }
+        }
+        
+        .storyboard-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(11, 16, 32, 0.08);
+            margin-bottom: 2rem;
+            break-inside: avoid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo animated-logo">
+                <span class="char">M</span><span class="char">_</span><span class="char">e</span><span
+                    class="char">d</span><span class="char">i</span><span class="char">t</span><span
+                    class="char">s</span><span class="accent-lime">.</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#work">Work</a>
+                <a href="index.html#about">About</a>
+                <a href="mailto:contact@emmanuelanya.com" class="btn btn-outline-plain">Let's Talk</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <main class="project-page">
+        <div class="container">
+            <div class="project-header reveal">
+                <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+                <h1 class="section-title brand-blue">Southeast<span class="accent-lime">.</span></h1>
+                <p>Animation Design & Storyboard</p>
+            </div>
+            
+            <div class="storyboard-grid">
+                <img src="southeastfile/Desktop - 4.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 5.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 6.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 7.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 8.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 9.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 10.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 11.png" alt="Storyboard Frame" class="storyboard-image reveal">
+                <img src="southeastfile/Desktop - 12.png" alt="Storyboard Frame" class="storyboard-image reveal">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h2 class="animated-logo">
+                    <span class="char">M</span><span class="char">_</span><span class="char">e</span><span
+                        class="char">d</span><span class="char">i</span><span class="char">t</span><span
+                        class="char">s</span><span class="accent-lime">.</span>
+                </h2>
+                <p>Video Editor & Motion Designer</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
