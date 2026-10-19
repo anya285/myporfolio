@@ -62,6 +62,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  // --- High-Performance Video Lazy Loader & Viewport Management ---
+  const lazyVideos = document.querySelectorAll('video.lazy-video');
+  if ('IntersectionObserver' in window && lazyVideos.length > 0) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        if (entry.isIntersecting) {
+          if (!vid.src && vid.dataset.src) {
+            vid.src = vid.dataset.src;
+            vid.load();
+          }
+          const playPromise = vid.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
+        } else {
+          if (vid.src) {
+            vid.pause();
+          }
+        }
+      });
+    }, {
+      rootMargin: '250px 0px 250px 0px',
+      threshold: 0.05
+    });
+
+    lazyVideos.forEach(v => videoObserver.observe(v));
+  } else {
+    lazyVideos.forEach(v => {
+      if (v.dataset.src) {
+        v.src = v.dataset.src;
+        v.play().catch(() => {});
+      }
+    });
+  }
+
   // --- Modal Preview for Projects ---
   const modal = document.querySelector('.preview-modal');
   const modalVideo = modal ? modal.querySelector('.modal-video') : null;
